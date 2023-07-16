@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Configuring a file with out typing a password
+Host your-server
+    HostName your-server-ip
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PreferredAuthentications publickey
+    PasswordAuthentication no
+
