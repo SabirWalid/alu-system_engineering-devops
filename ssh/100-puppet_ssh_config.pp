@@ -3,3 +3,4 @@
 Host <server_host>
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
+
