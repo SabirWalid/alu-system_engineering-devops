@@ -16,6 +16,7 @@ sudo bash -c 'cat > /var/www/html/404.html <<EOF
     <p>Ceci n\'est pas une page</p>
 </body>
 </html>
+EOF'
 
 config_file=\
 "server {
