@@ -2,25 +2,8 @@
 #Update system packages
 sudo apt update
 
-# Install nginx web server
-sudo apt install -y nginx
-
-# Configure nginx for redirection
-sudo bash -c `cat > /etc/nginx/conf.d/redirect_me.config <<EOL
-server {
-	listen 80;
-	server_name sabirwalid.com;
-
-	location /redirect_me {
-		return 301 https://youtube.com;
-	}
-
-	location / {
-		#My main website configuration goes here
-		#Add more "location" blocks if needed
-	}
-    }
-    EOL`
-
-# Verify nginx configuration and restart the server
-sudo nginx -t && sudo systemctl restart nginx
+# Install the nginx web server
+sudo apt-get install -y nginx
+newlines="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sudo sed -i "53i $newlines" /etc/nginx/sites-available/default
+sudo service nginx restart 
