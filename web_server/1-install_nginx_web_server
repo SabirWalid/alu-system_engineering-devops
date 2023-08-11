@@ -2,5 +2,7 @@
 # installs the reverse proxy - Nginx
 sudo apt update && upgrade
 sudo apt install nginx -y 
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+curl -sS http://localhost/ | grep -q "Holberton School" && echo "Test Passed" || echo "Test Failed"
 echo "Holberton School" | sudo tee /var/www/html/index.html
 sudo service nginx start
