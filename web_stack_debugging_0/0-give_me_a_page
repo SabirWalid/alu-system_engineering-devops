@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script fixes the webstack.
+apt-get update
+apt-get install -y curl
+echo "Hello Holberton" > /var/www/html/index.html
+service apache2 start
