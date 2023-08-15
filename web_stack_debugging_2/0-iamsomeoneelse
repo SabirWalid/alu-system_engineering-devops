@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Check if a username is provided as an argument
+if [ $# -eq 0 ]; then
+  echo "Please provide a username as an argument"
+  exit 1
+fi
+# This script runs the whoami command under the user passed as an argument
+
+sudo -u "$1" whoami
+
